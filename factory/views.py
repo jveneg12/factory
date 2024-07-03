@@ -10,6 +10,6 @@ def index(request):
     return render(request, 'demo/index.html', context)
 
 
-def Labortorios(request):
-    context={"clase": "Labortorios"}
-    return render(request, 'demo/Labortorios.html', context)
+def laboratorio(request):
+    context={"clase": "laboratorio"}
+    return render(request, 'demo/laboratorio.html', context)
