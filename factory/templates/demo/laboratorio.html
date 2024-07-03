@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>laboratorio</title>
+    <title>Laboratorio</title>
     {% load static %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href={% static "css/style.css" %} />
 </head>
 <body>
     <nav class="navbar navbar-dark bg-transparent navbar-expand-lg">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{% url 'index' %}">
             <img src="{% static 'img/logofactory.jpg' %}" width="200" height="100" class="d-inline-block align-top" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,34 +19,36 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href={% url "pc.armados.html" %}>PC armados <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href={% url "laboratorio.html" %}>Laboratorios</a>
+                    <a class="nav-link" href="{% url 'laboratorio' %}">Laboratorios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href={% url "contacto.html" %}>Contacto</a>
+                    <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorias
+                        Categorías
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="pc.gamer.html">PC GAMERS</a>
-                        <a class="dropdown-item" href="workstations.html">WORKSTATIONS</a>
+                        <a class="dropdown-item" href="{% url 'pc_gamer' %}">PC GAMERS</a>
+                        <a class="dropdown-item" href="{% url 'workstations' %}">WORKSTATIONS</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="home.office.html">OFICINA-HOME OFFICE</a>
+                        <a class="dropdown-item" href="{% url 'home_office' %}">OFICINA-HOME OFFICE</a>
                     </div>
                 </li>
-                <a href="carritodecompras.html">
-                <img src="{% static 'img/carrito-de-compras.png' %}"  width="40" height="40" class="d-inline-block align-top" alt="Carrito de compras">
+                <a href="{% url 'carrito' %}">
+                    <img src="{% static 'img/carrito-de-compras.png' %}" width="40" height="40" class="d-inline-block align-top" alt="Carrito de compras">
                 </a>
             </ul>
-            <a href="index.html">
-                <button>INICIO</button>
+            <a href="{% url 'registrarse' %}">
+                <button>Registrarse</button>
             </a>
         </div>
     </nav>
+
+    <h1 class="text-center">Página de Laboratorio</h1>
     <div class="custom-container">
         <h1 class="text-center">NUESTROS TRABAJOS</h1>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -55,7 +57,7 @@
                     <img class="d-block w-100" src="{% static 'img/LABORATORIO2.jpg' %}" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{% static 'img/LABORATORIO3.jpg' %}"alt="Second slide">
+                    <img class="d-block w-100" src="{% static 'img/LABORATORIO3.jpg' %}" alt="Second slide">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'img/LABORATORIO4.jpg' %}" alt="Third slide">
@@ -71,8 +73,6 @@
             </a>
         </div>
     </div>
-
-    
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
